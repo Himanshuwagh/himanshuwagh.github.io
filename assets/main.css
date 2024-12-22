@@ -19,6 +19,28 @@ h1,h2,h3,h4,h5,h6,p,blockquote,pre,ul,ol,dl,figure,.highlight {
     margin-bottom: 15px;
 }
 
+.content-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-header {
+    flex: 1;
+    margin-right: 20px; /* space between headers and iframes */
+}
+
+.right-iframe {
+    flex: 0 0 280px; /* ensures iframe column doesn't grow beyond iframe width */
+}
+
+.right-iframe iframe {
+    margin-bottom: 10px; /* space between iframes */
+}
+
+.left-header .post-header:first-child {
+    margin-bottom: 100px; /* Increase space between the two headers to match the iframe height */
+}
+
 img {
     max-width: 100%;
     vertical-align: middle
