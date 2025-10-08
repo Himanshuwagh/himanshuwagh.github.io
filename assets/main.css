@@ -323,6 +323,18 @@ pre>code {
     margin-left: 0
 }
 
+.top-contact-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.top-contact-list li {
+    display: flex;
+    align-items: center;
+}
+
 .footer-col-wrapper {
     font-size: 15px;
     color: #828282;
