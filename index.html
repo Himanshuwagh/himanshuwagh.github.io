@@ -74,584 +74,1544 @@
             <br>
             <hr style="color: rgb(171, 171, 171);">
             <br>
-            <h1 class="post-title" style="font-size:20px; margin-bottom: 10px; text-align: left;">Tech Stack</h1>
+<!-- Add this CSS to your <head> section or existing <style> tag -->
+<style>
+    /* Tech Stack Animation Styles */
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    
+    .animate-scroll-slow {
+        animation: scroll 80s linear infinite;
+    }
+    
+    .animate-scroll-fast {
+        animation: scroll 40s linear infinite;
+    }
+    
+    .animate-scroll-slow:hover,
+    .animate-scroll-fast:hover {
+        animation-play-state: paused;
+    }
+    
+    /* Consistent card styling */
+    .tech-card {
+        width: 120px;
+        flex-shrink: 0;
+        border-radius: 0.5rem;
+        border: 1px solid #e2e8f0;
+        background-color: #ffffff;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .tech-card:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        transform: scale(1.05);
+    }
+    
+    .tech-card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0.5rem;
+        min-height: 80px;
+    }
+    
+    .tech-icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 9999px;
+        background-color: rgba(59, 130, 246, 0.1);
+        margin-bottom: 0.5rem;
+    }
+    
+    .tech-icon {
+        font-size: 1.25rem;
+    }
+    
+    .tech-name {
+        font-weight: 600;
+        font-size: 0.75rem;
+        color: #0f172a;
+        text-align: center;
+    }
+    
+    /* Container styles */
+    .tech-section {
+        padding: 2rem 0;
+        background-color: rgba(241, 245, 249, 0.3);
+        overflow: hidden;
+    }
+    
+    .scroll-container {
+        position: relative;
+    }
+    
+    .scroll-row {
+        display: flex;
+        gap: 1rem;
+        width: max-content;
+    }
+    
+    .gradient-left,
+    .gradient-right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 5rem;
+        pointer-events: none;
+        z-index: 10;
+    }
+    
+    .gradient-left {
+        left: 0;
+        background: linear-gradient(to right, rgba(241, 245, 249, 0.3), transparent);
+    }
+    
+    .gradient-right {
+        right: 0;
+        background: linear-gradient(to left, rgba(241, 245, 249, 0.3), transparent);
+    }
+    
+    .row-gap {
+        margin-top: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+        .tech-card {
+            width: 100px;
+        }
+        .scroll-row {
+            gap: 0.75rem;
+        }
+    }
+</style>
+
+<!-- Replace your existing Tech Stack section with this HTML -->
             <div class="content-container">
+    <h1 class="post-title" style="font-size:20px; margin-bottom: 10px; text-align: left;">Tech Stack</h1>
+    <section class="tech-section">
+    <div class="scroll-container">
+        <!-- First Row - Slower Speed -->
+        <div class="scroll-row animate-scroll-slow">
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #3b82f6;">🐍</div>
+                    </div>
+                    <div class="tech-name">Python</div>
+                </div>
+            </div>
             
-                <section id="tech" class="py-10 bg-muted/30 overflow-hidden">
-                    <div class="container">
-                        
-                        
-                        
-                        <div class="relative">
-                            <div class="flex animate-scroll space-x-6" style="width: max-content;">
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-blue-500 text-2xl">🐍</div>
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #eab308;">⚡</div>
+                    </div>
+                    <div class="tech-name">JavaScript</div>
+                </div>
+            </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #2563eb;">📊</div>
+                    </div>
+                    <div class="tech-name">R</div>
+                </div>
+            </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #f97316;">🌐</div>
+                    </div>
+                    <div class="tech-name">HTML</div>
+                </div>
+            </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #60a5fa;">🎨</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Python</div>
+                    <div class="tech-name">CSS</div>
                                         </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Versatile programming language for web development, data science, and automation</div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #16a34a;">🗄️</div>
+                                    </div>
+                    <div class="tech-name">SQL</div>
+                                </div>
+                                            </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #16a34a;">🎯</div>
+                                        </div>
+                    <div class="tech-name">Django</div>
+                                        </div>
+                                    </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #14b8a6;">⚡</div>
+                                </div>
+                    <div class="tech-name">FastAPI</div>
+                                            </div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #4b5563;">🌶️</div>
+                                        </div>
+                    <div class="tech-name">Flask</div>
+                                    </div>
+                                </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #60a5fa;">🔢</div>
+                                            </div>
+                    <div class="tech-name">NumPy</div>
+                                        </div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #a855f7;">🐼</div>
+                                    </div>
+                    <div class="tech-name">Pandas</div>
+                                </div>
+                                            </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #ef4444;">📈</div>
+                                        </div>
+                    <div class="tech-name">Matplotlib</div>
+                                        </div>
+                                    </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #06b6d4;">📊</div>
+                                </div>
+                    <div class="tech-name">Seaborn</div>
+                                            </div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #6366f1;">📉</div>
+                                        </div>
+                    <div class="tech-name">Data Visualization</div>
+                                    </div>
+                                </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #fb923c;">🔍</div>
+                                            </div>
+                    <div class="tech-name">EDA</div>
+                                        </div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #0d9488;">🧹</div>
+                                    </div>
+                    <div class="tech-name">Data Wrangling</div>
+                                </div>
+                                            </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #f97316;">🧠</div>
+                                        </div>
+                    <div class="tech-name">TensorFlow</div>
+                                        </div>
+                                    </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #ef4444;">🔥</div>
+                                </div>
+                    <div class="tech-name">PyTorch</div>
+                                            </div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #eab308;">📊</div>
+                                        </div>
+                    <div class="tech-name">Scikit-learn</div>
+                                    </div>
+                                </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #f87171;">🎯</div>
+                                            </div>
+                    <div class="tech-name">Keras</div>
+                                        </div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #9333ea;">🤖</div>
+                                    </div>
+                    <div class="tech-name">Transformers</div>
+                                </div>
+                                            </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #facc15;">🤗</div>
+                                        </div>
+                    <div class="tech-name">Hugging Face</div>
+                                        </div>
+                                    </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #2563eb;">👁️</div>
+                                </div>
+                    <div class="tech-name">OpenCV</div>
+                                            </div>
+                                        </div>
+            
+            <!-- Duplicate cards for seamless infinite scroll -->
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #3b82f6;">🐍</div>
+                                        </div>
+                    <div class="tech-name">Python</div>
+                                    </div>
+                                </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #eab308;">⚡</div>
+                                            </div>
+                    <div class="tech-name">JavaScript</div>
+                                        </div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #2563eb;">📊</div>
+                                    </div>
+                    <div class="tech-name">R</div>
+                                </div>
+                                            </div>
+                                        </div>
+        
+        <!-- Second Row - Faster Speed -->
+        <div class="scroll-row animate-scroll-fast row-gap">
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #22c55e;">📷</div>
+                                        </div>
+                    <div class="tech-name">Computer Vision</div>
+                                    </div>
+                                </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #3b82f6;">💬</div>
+                                            </div>
+                    <div class="tech-name">NLP</div>
+                                        </div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #4ade80;">📝</div>
+                                    </div>
+                    <div class="tech-name">NLTK</div>
+                                </div>
+                                            </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #c084fc;">👤</div>
+                                        </div>
+                    <div class="tech-name">OpenFace</div>
+                                        </div>
+                                    </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #6b7280;">🔤</div>
+                                </div>
+                    <div class="tech-name">pytesseract</div>
+                                            </div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #22d3ee;">🎯</div>
+                                        </div>
+                    <div class="tech-name">supervision</div>
+                                    </div>
+                                </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #ea580c;">🍲</div>
+                                            </div>
+                    <div class="tech-name">Beautiful Soup</div>
+                                        </div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #dc2626;">📄</div>
+                                    </div>
+                    <div class="tech-name">PDFplumber</div>
+                                </div>
+                                            </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #ec4899;">🖼️</div>
+                                        </div>
+                    <div class="tech-name">Pillow</div>
+                                        </div>
+                                    </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #818cf8;">⏰</div>
+                                </div>
+                    <div class="tech-name">Time Series</div>
+                                            </div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #374151;">🔗</div>
+                                        </div>
+                    <div class="tech-name">DSA</div>
+                                    </div>
+                                </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #1d4ed8;">🏗️</div>
+                                            </div>
+                    <div class="tech-name">OOP</div>
+                                        </div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #c2410c;">🌿</div>
+                                    </div>
+                    <div class="tech-name">Git</div>
+                                </div>
+                                            </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #1f2937;">🐙</div>
+                                        </div>
+                    <div class="tech-name">GitHub</div>
+                                        </div>
+                                    </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #3b82f6;">💻</div>
+                                </div>
+                    <div class="tech-name">VS Code</div>
+                                            </div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #ca8a04;">☁️</div>
+                                        </div>
+                    <div class="tech-name">Google Colab</div>
+                                    </div>
+                                </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #0891b2;">🏆</div>
+                                            </div>
+                    <div class="tech-name">Kaggle</div>
+                                        </div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #ec4899;">📈</div>
+                                    </div>
+                    <div class="tech-name">Streamlit</div>
+                                </div>
+                                            </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #a855f7;">🚀</div>
+                                        </div>
+                    <div class="tech-name">Render</div>
+                                        </div>
+                                    </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #000000;">▲</div>
+                                </div>
+                    <div class="tech-name">Vercel</div>
+                                            </div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #15803d;">🎯</div>
+                                        </div>
+                    <div class="tech-name">Model Deployment</div>
+                                    </div>
+                                </div>
+            
+            <!-- Duplicate cards for seamless infinite scroll -->
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #22c55e;">📷</div>
+                                            </div>
+                    <div class="tech-name">Computer Vision</div>
+                                        </div>
+                                        </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #3b82f6;">💬</div>
+                                    </div>
+                    <div class="tech-name">NLP</div>
+                                </div>
+                                            </div>
+            
+            <div class="tech-card">
+                <div class="tech-card-content">
+                    <div class="tech-icon-wrapper">
+                        <div class="tech-icon" style="color: #4ade80;">📝</div>
+                                        </div>
+                    <div class="tech-name">NLTK</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-yellow-500 text-2xl">⚡</div>
+        
+        <!-- Gradient overlays -->
+        <div class="gradient-left"></div>
+        <div class="gradient-right"></div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">JavaScript</div>
+</section>
                                         </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Dynamic programming language for web development and interactive applications</div>
+            
+            <style>
+                @keyframes scroll {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+                /* Tech Stack Animation Styles */
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[40px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-blue-500 text-lg">🐍</div>
+                                        </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Python</div>
+                                    </div>
+                                </div>
+                                            </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[40px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-yellow-500 text-lg">⚡</div>
+                                        </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">JavaScript</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-blue-600 text-2xl">📊</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-blue-600 text-lg">📊</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">R</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">R</div>
                                         </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Statistical computing language for data analysis and visualization</div>
+                                        </div>
+                                    </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-orange-500 text-lg">🌐</div>
+                                </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">HTML</div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-blue-400 text-lg">🎨</div>
+                                    </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">CSS</div>
+                                </div>
+                                            </div>
+                                        </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-green-600 text-lg">🗄️</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">SQL</div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-green-600 text-lg">🎯</div>
+                                </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Django</div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-teal-500 text-lg">⚡</div>
+                                    </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">FastAPI</div>
+                                </div>
+                                            </div>
+                                        </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-gray-600 text-lg">🌶️</div>
+                                        </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Flask</div>
+                                    </div>
+                                </div>
+                                            </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-blue-400 text-lg">🔢</div>
+                                        </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">NumPy</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-orange-500 text-2xl">🌐</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-purple-500 text-lg">🐼</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">HTML</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Pandas</div>
                                         </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Markup language for creating web pages and web applications</div>
+                                        </div>
+                                    </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-red-500 text-lg">📈</div>
+                                </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Matplotlib</div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-cyan-500 text-lg">📊</div>
+                                    </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Seaborn</div>
+                                </div>
+                                            </div>
+                                        </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-indigo-500 text-lg">📉</div>
+                                        </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Data Visualization</div>
+                                    </div>
+                                </div>
+                                            </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-orange-400 text-lg">🔍</div>
+                                        </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">EDA</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-blue-400 text-2xl">🎨</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-teal-600 text-lg">🧹</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">CSS</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Data Wrangling</div>
                                         </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Style sheet language for designing and laying out web pages</div>
+                                        </div>
+                                    </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-orange-500 text-lg">🧠</div>
+                                </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">TensorFlow</div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-red-500 text-lg">🔥</div>
+                                    </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">PyTorch</div>
+                                </div>
+                                            </div>
+                                        </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-yellow-500 text-lg">📊</div>
+                                        </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Scikit-learn</div>
+                                    </div>
+                                </div>
+                                            </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-red-400 text-lg">🎯</div>
+                                        </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Keras</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-green-600 text-2xl">🗄️</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-purple-600 text-lg">🤖</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">SQL</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Transformers</div>
                                         </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Database query language for managing and manipulating relational databases</div>
+                                        </div>
+                                    </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-yellow-400 text-lg">🤗</div>
+                                </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Hugging Face</div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-blue-600 text-lg">👁️</div>
+                                    </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">OpenCV</div>
+                                </div>
+                                            </div>
+                                        </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-green-500 text-lg">📷</div>
+                                        </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Computer Vision</div>
+                                    </div>
+                                </div>
+                                            </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-blue-500 text-lg">💬</div>
+                                        </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">NLP</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-green-600 text-2xl">🎯</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-green-400 text-lg">📝</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Django</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">NLTK</div>
                                         </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">High-level Python web framework for rapid development and clean design</div>
+                                        </div>
+                                    </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-purple-400 text-lg">👤</div>
+                                </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">OpenFace</div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-gray-500 text-lg">🔤</div>
+                                    </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">pytesseract</div>
+                                </div>
+                                            </div>
+                                        </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-cyan-400 text-lg">🎯</div>
+                                        </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">supervision</div>
+                                    </div>
+                                </div>
+                                            </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-orange-600 text-lg">🍲</div>
+                                        </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Beautiful Soup</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-teal-500 text-2xl">⚡</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-red-600 text-lg">📄</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">FastAPI</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">PDFplumber</div>
                                         </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Modern, fast web framework for building APIs with Python based on standard type hints</div>
                                         </div>
                                     </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-pink-500 text-lg">🖼️</div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-gray-600 text-2xl">🌶️</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Pillow</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Flask</div>
                                         </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Lightweight WSGI web application framework for building web applications</div>
                                         </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-indigo-400 text-lg">⏰</div>
                                     </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Time Series</div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-blue-400 text-2xl">🔢</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">NumPy</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Fundamental package for scientific computing with Python arrays and matrices</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-purple-500 text-2xl">🐼</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Pandas</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Powerful data manipulation and analysis library for structured data</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-red-500 text-2xl">📈</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Matplotlib</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Comprehensive library for creating static, animated, and interactive visualizations</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-cyan-500 text-2xl">📊</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Seaborn</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Statistical data visualization library based on matplotlib for attractive graphics</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-indigo-500 text-2xl">📉</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Data Visualization</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Creating visual representations of data to communicate insights effectively</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-orange-400 text-2xl">🔍</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">EDA</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Exploratory Data Analysis for understanding data patterns and relationships</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-teal-600 text-2xl">🧹</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Data Wrangling</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Process of cleaning, structuring and enriching raw data for analysis</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-orange-500 text-2xl">🧠</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">TensorFlow</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Open-source machine learning framework for building and training ML models</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-red-500 text-2xl">🔥</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">PyTorch</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Deep learning framework that provides maximum flexibility and speed</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-yellow-500 text-2xl">📊</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Scikit-learn</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Simple and efficient tools for predictive data analysis and machine learning</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-red-400 text-2xl">🎯</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Keras</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">High-level neural networks API for fast deep learning experimentation</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-purple-600 text-2xl">🤖</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Transformers</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">State-of-the-art natural language processing models and architectures</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-yellow-400 text-2xl">🤗</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Hugging Face</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Platform for sharing and deploying machine learning models and datasets</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-blue-600 text-2xl">👁️</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">OpenCV</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Open source computer vision and machine learning software library</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-green-500 text-2xl">📷</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Computer Vision</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Field of AI that trains computers to interpret and understand visual world</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-blue-500 text-2xl">💬</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">NLP</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Natural Language Processing for understanding and generating human language</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-green-400 text-2xl">📝</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">NLTK</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Natural Language Toolkit for working with human language data in Python</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-purple-400 text-2xl">👤</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">OpenFace</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Open source facial recognition and analysis toolkit</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-gray-500 text-2xl">🔤</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">pytesseract</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Python wrapper for Google's Tesseract OCR engine</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-cyan-400 text-2xl">🎯</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">supervision</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Computer vision toolkit for object detection and tracking applications</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-orange-600 text-2xl">🍲</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Beautiful Soup</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Python library for pulling data out of HTML and XML files</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-red-600 text-2xl">📄</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">PDFplumber</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Python library for extracting text and tables from PDF files</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-pink-500 text-2xl">🖼️</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Pillow</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
-                                            <div class="text-xs text-center text-muted-foreground">Python Imaging Library for opening, manipulating, and saving image files</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-indigo-400 text-2xl">⏰</div>
-                                            </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Time Series</div>
-                                        </div>
-                                        <div class="p-3 pt-0">
+                                        <div class="p-2 pt-0">
                                             <div class="text-xs text-center text-muted-foreground">Analysis and forecasting of data points collected over time intervals</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-gray-700 text-2xl">🔗</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-gray-700 text-lg">🔗</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">DSA</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">DSA</div>
                                         </div>
-                                        <div class="p-3 pt-0">
+                                        <div class="p-2 pt-0">
                                             <div class="text-xs text-center text-muted-foreground">Data Structures and Algorithms for efficient problem solving</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-blue-700 text-2xl">🏗️</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-blue-700 text-lg">🏗️</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">OOP</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">OOP</div>
                                         </div>
-                                        <div class="p-3 pt-0">
+                                        <div class="p-2 pt-0">
                                             <div class="text-xs text-center text-muted-foreground">Object-Oriented Programming paradigm for modular and reusable code</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-orange-700 text-2xl">🌿</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-orange-700 text-lg">🌿</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Git</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Git</div>
                                         </div>
-                                        <div class="p-3 pt-0">
+                                        <div class="p-2 pt-0">
                                             <div class="text-xs text-center text-muted-foreground">Distributed version control system for tracking changes in source code</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-gray-800 text-2xl">🐙</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-gray-800 text-lg">🐙</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">GitHub</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">GitHub</div>
                                         </div>
-                                        <div class="p-3 pt-0">
+                                        <div class="p-2 pt-0">
                                             <div class="text-xs text-center text-muted-foreground">Web-based platform for version control and collaborative software development</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-blue-500 text-2xl">💻</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-blue-500 text-lg">💻</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">VS Code</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">VS Code</div>
                                         </div>
-                                        <div class="p-3 pt-0">
+                                        <div class="p-2 pt-0">
                                             <div class="text-xs text-center text-muted-foreground">Lightweight but powerful source code editor with extensive extensions</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-yellow-600 text-2xl">☁️</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-yellow-600 text-lg">☁️</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Google Colab</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Google Colab</div>
                                         </div>
-                                        <div class="p-3 pt-0">
+                                        <div class="p-2 pt-0">
                                             <div class="text-xs text-center text-muted-foreground">Cloud-based Jupyter notebook environment for machine learning and data science</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-cyan-600 text-2xl">🏆</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-cyan-600 text-lg">🏆</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Kaggle</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Kaggle</div>
                                         </div>
-                                        <div class="p-3 pt-0">
+                                        <div class="p-2 pt-0">
                                             <div class="text-xs text-center text-muted-foreground">Platform for data science competitions and collaborative machine learning</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-pink-500 text-2xl">📈</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-pink-500 text-lg">📈</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Streamlit</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Streamlit</div>
                                         </div>
-                                        <div class="p-3 pt-0">
+                                        <div class="p-2 pt-0">
                                             <div class="text-xs text-center text-muted-foreground">Framework for creating beautiful data apps and ML dashboards</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-purple-500 text-2xl">🚀</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-purple-500 text-lg">🚀</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Render</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Render</div>
                                         </div>
-                                        <div class="p-3 pt-0">
+                                        <div class="p-2 pt-0">
                                             <div class="text-xs text-center text-muted-foreground">Cloud platform for hosting web applications and databases</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-black text-2xl">▲</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-black text-lg">▲</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Vercel</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Vercel</div>
                                         </div>
-                                        <div class="p-3 pt-0">
+                                        <div class="p-2 pt-0">
                                             <div class="text-xs text-center text-muted-foreground">Platform for frontend frameworks and static sites with serverless functions</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[200px] shrink-0">
-                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden h-full transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
-                                        <div class="flex flex-col space-y-1.5 p-3">
-                                            <div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 mb-2 mx-auto">
-                                                <div class="text-green-700 text-2xl">🎯</div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-green-700 text-lg">🎯</div>
                                             </div>
-                                            <div class="font-semibold tracking-tight text-sm text-center text-card-foreground">Model Deployment</div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Model Deployment</div>
                                         </div>
-                                        <div class="p-3 pt-0">
+                                        <div class="p-2 pt-0">
+                                            <div class="text-xs text-center text-muted-foreground">Process of integrating machine learning models into production systems</div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Second Row - Faster Speed -->
+                            <div class="flex animate-scroll-fast space-x-4 mt-0.5" style="width: max-content;">
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-red-500 text-lg">🔥</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">PyTorch</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-yellow-500 text-lg">📊</div>
+                                </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Scikit-learn</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-red-400 text-lg">🎯</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Keras</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-purple-600 text-lg">🤖</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Transformers</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-yellow-400 text-lg">🤗</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Hugging Face</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-green-600 text-lg">🗄️</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">SQL</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-green-600 text-lg">🎯</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Django</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-teal-500 text-lg">⚡</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">FastAPI</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-gray-600 text-lg">🌶️</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Flask</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-blue-400 text-lg">🔢</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">NumPy</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-purple-500 text-lg">🐼</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Pandas</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-red-500 text-lg">📈</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Matplotlib</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-cyan-500 text-lg">📊</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Seaborn</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-indigo-500 text-lg">📉</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Data Visualization</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-orange-400 text-lg">🔍</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">EDA</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-teal-600 text-lg">🧹</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Data Wrangling</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-orange-500 text-lg">🧠</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">TensorFlow</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-red-500 text-lg">🔥</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">PyTorch</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-yellow-500 text-lg">📊</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Scikit-learn</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-red-400 text-lg">🎯</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Keras</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-purple-600 text-lg">🤖</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Transformers</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-yellow-400 text-lg">🤗</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Hugging Face</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-blue-600 text-lg">👁️</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">OpenCV</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-green-500 text-lg">📷</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Computer Vision</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-blue-500 text-lg">💬</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">NLP</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-green-400 text-lg">📝</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">NLTK</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-purple-400 text-lg">👤</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">OpenFace</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-gray-500 text-lg">🔤</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">pytesseract</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-cyan-400 text-lg">🎯</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">supervision</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-orange-600 text-lg">🍲</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Beautiful Soup</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-red-600 text-lg">📄</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">PDFplumber</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-pink-500 text-lg">🖼️</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Pillow</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-indigo-400 text-lg">⏰</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Time Series</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-gray-700 text-lg">🔗</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">DSA</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-blue-700 text-lg">🏗️</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">OOP</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-orange-700 text-lg">🌿</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Git</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-gray-800 text-lg">🐙</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">GitHub</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-blue-500 text-lg">💻</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">VS Code</div>
+                                        </div>
+                                        <div class="p-2 pt-0">
+                                            <div class="text-xs text-center text-muted-foreground">Lightweight but powerful source code editor with extensive extensions</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-yellow-600 text-lg">☁️</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Google Colab</div>
+                                        </div>
+                                        <div class="p-2 pt-0">
+                                            <div class="text-xs text-center text-muted-foreground">Cloud-based Jupyter notebook environment for machine learning and data science</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-cyan-600 text-lg">🏆</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Kaggle</div>
+                                        </div>
+                                        <div class="p-2 pt-0">
+                                            <div class="text-xs text-center text-muted-foreground">Platform for data science competitions and collaborative machine learning</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-pink-500 text-lg">📈</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Streamlit</div>
+                                        </div>
+                                        <div class="p-2 pt-0">
+                                            <div class="text-xs text-center text-muted-foreground">Framework for creating beautiful data apps and ML dashboards</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-purple-500 text-lg">🚀</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Render</div>
+                                        </div>
+                                        <div class="p-2 pt-0">
+                                            <div class="text-xs text-center text-muted-foreground">Cloud platform for hosting web applications and databases</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-black text-lg">▲</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Vercel</div>
+                                        </div>
+                                        <div class="p-2 pt-0">
+                                            <div class="text-xs text-center text-muted-foreground">Platform for frontend frameworks and static sites with serverless functions</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[120px] shrink-0">
+                                    <div class="rounded-lg border text-card-foreground shadow-sm overflow-hidden transition-all hover:shadow-lg hover:scale-105 bg-card border-border">
+                                        <div class="flex flex-col items-center justify-center text-center space-y-0.5 p-1 min-h-[50px]">
+                                            <div class="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 mb-0.5">
+                                                <div class="text-green-700 text-lg">🎯</div>
+                                            </div>
+                                            <div class="font-semibold tracking-tight text-xs text-center text-card-foreground">Model Deployment</div>
+                                        </div>
+                                        <div class="p-2 pt-0">
                                             <div class="text-xs text-center text-muted-foreground">Process of integrating machine learning models into production systems</div>
                                         </div>
                                     </div>
@@ -675,11 +1635,16 @@
                     }
                 }
                 
-                .animate-scroll {
-                    animation: scroll 60s linear infinite;
+                .animate-scroll-slow {
+                    animation: scroll 80s linear infinite;
                 }
                 
-                .animate-scroll:hover {
+                .animate-scroll-fast {
+                    animation: scroll 40s linear infinite;
+                }
+                
+                .animate-scroll-slow:hover,
+                .animate-scroll-fast:hover {
                     animation-play-state: paused;
                 }
                 
@@ -696,11 +1661,11 @@
                 }
                 
                 /* Base styles */
-                .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
-                .py-10 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+                .py-20 { padding-top: 0rem; padding-bottom: 0rem; }
+                .py-10 { padding-top: 0rem; padding-bottom: 0rem; }
                 .bg-muted\/30 { background-color: rgba(241, 245, 249, 0.3); }
                 .overflow-hidden { overflow: hidden; }
-                .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+                .container { max-width: 1200px; margin: 0 auto; padding: 0 0rem; }
                 .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
                 .font-bold { font-weight: 700; }
                 .tracking-tighter { letter-spacing: -0.05em; }
@@ -708,7 +1673,7 @@
                 .text-foreground { color: var(--foreground); }
                 .text-muted-foreground { color: var(--muted-foreground); }
                 .text-center { text-align: center; }
-                .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+                .text-xs { font-size: 0.875rem; line-height: 1.25rem; }
                 .text-xs { font-size: 0.75rem; line-height: 1rem; }
                 .font-semibold { font-weight: 600; }
                 .text-primary { color: var(--primary); }
@@ -716,13 +1681,17 @@
                 
                 /* Flexbox and Grid */
                 .flex { display: flex; }
-                .space-x-6 > * + * { margin-left: 1.5rem; }
-                .w-\[200px\] { width: 200px; }
+                .space-x-4 > * + * { margin-left: 1rem; }
+                .w-\[120px\] { width: 120px; }
                 .shrink-0 { flex-shrink: 0; }
                 .space-y-1\.5 > * + * { margin-top: 0.375rem; }
-                .p-3 { padding: 0.75rem; }
+                .space-y-0\.5 > * + * { margin-top: 0.125rem; }
+                .p-1\.5 { padding: 0.375rem; }
+                .p-1 { padding: 0.25rem; }
+                .min-h-\[50px\] { min-height: 50px; }
                 .pt-0 { padding-top: 0; }
                 .mb-2 { margin-bottom: 0.5rem; }
+                .mb-0\.5 { margin-bottom: 0.125rem; }
                 .mx-auto { margin-left: auto; margin-right: auto; }
                 .items-center { align-items: center; }
                 .justify-center { justify-content: center; }
@@ -793,15 +1762,16 @@
                 .text-black { color: #000000; }
                 .text-green-700 { color: #15803d; }
                 
-                .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+                .text-lg { font-size: 1.5rem; line-height: 2rem; }
                 
                 /* Responsive design */
                 @media (max-width: 768px) {
                     .container { padding: 0 0.5rem; }
-                    .py-20 { padding-top: 3rem; padding-bottom: 3rem; }
+                    .py-20 { padding-top: 1rem; padding-bottom: 1rem; }
                     .text-3xl { font-size: 1.5rem; line-height: 2rem; }
-                    .w-\[200px\] { width: 180px; }
-                    .space-x-6 > * + * { margin-left: 1rem; }
+                    .w-\[120px\] { width: 100px; }
+                    .space-x-4 > * + * { margin-left: 0.75rem; }
+                    .min-h-\[50px\] { min-height: 45px; }
                 }
             </style>
             <br>
