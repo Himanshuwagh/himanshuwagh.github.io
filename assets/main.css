@@ -721,3 +721,58 @@ pre>code {
 .highlight .il {
     color: #099
 }
+
+/* ---- Blog readability tweaks ---- */
+.post-content p {
+    line-height: 1.8;
+    color: #1f2937; /* slate-800 */
+}
+
+/* Smaller, calmer headings inside posts */
+.post-content h2 {
+    font-size: 24px;
+    line-height: 1.3;
+    margin-top: 18px;
+}
+
+.post-content h3 {
+    font-size: 20px;
+    line-height: 1.35;
+    margin-top: 14px;
+}
+
+@media screen and (max-width: 800px) {
+    .post-content h2 { font-size: 22px }
+    .post-content h3 { font-size: 18px }
+}
+
+/* Code blocks */
+.post-content pre,
+.post-content code {
+    background-color: #f6f8fa;
+    border-color: #e5e7eb; /* gray-200 */
+}
+
+.post-content pre {
+    border-radius: 6px;
+    padding: 12px 14px;
+}
+
+/* Tables */
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+}
+
+.post-content th,
+.post-content td {
+    border: 1px solid #e5e7eb; /* gray-200 */
+    padding: 8px 10px;
+    text-align: left;
+}
+
+.post-content thead th {
+    background: #f9fafb; /* gray-50 */
+    font-weight: 600;
+}
