@@ -44,12 +44,16 @@
       <div class="wrapper">
         <article class="post">
           <header class="post-header">
-            <h1 class="post-title" style="font-size:25px;">Understanding NanoChat Model Parameters: A Complete Breakdown</h1>
+            <h1 class="post-title" style="font-size:25px;">Inside NanoChat: How 561 Million Parameters Come Together in a Transformer</h1>
           </header>
 
           <div class="post-content">
             <h2 style="font-size:20px;">Introduction</h2>
-            <p>The NanoChat d20 model has <strong>560,988,160 parameters</strong> (≈561M). But how do we arrive at this number? This post breaks down the exact calculations behind the model architecture.</p>
+            <p>Modern language models are defined by a single number — their parameter count.
+              Yet, behind that number lies a web of architectural design decisions that shape how the model learns, scales, and performs.
+              In this post, we’ll take apart NanoChat d20, a compact transformer model with ≈561 M parameters, and understand exactly where each parameter comes from — from token embeddings to feed-forward layers — and how this design fits within modern scaling laws.</p>
+            
+            <p>In large-language models (LLMs), the number of trainable parameters is more than just a statistic — it captures how much capacity the model has, how much compute and data you'll need, and what kind of tasks it can handle. In this post, we take a detailed look at the configuration and parameter-count of the NanoChat d20 model (≈561 M parameters) and explain exactly how that number is calculated, why the architectural choices were made, and how it connects to the amount of training data required. Whether you're a researcher building your own transformer from scratch or a trained-engineer tuning an off-the-shelf model, understanding these mechanics gives you a clearer view of the trade-offs involved.</p>
 
             <h2 style="font-size:20px;">Model Specifications</h2>
             <p>The d20 model is defined by these configuration parameters:</p>
@@ -85,13 +89,19 @@
             </table>
             <p>From these specs, we can calculate the exact parameter count.</p>
 
+            <div style="text-align: center; margin: 20px 0;">
+              <img src="../img/download (1).png" alt="NanoChat Model Architecture" style="max-width: 100%; height: 250px;">
+            </div>
+
             <h2 style="font-size:20px;">Parameter Calculation Breakdown</h2>
 
             <h3 style="font-size:18px;">1. Embedding Layer: ~83.9M Parameters</h3>
-            <pre><code>Embedding parameters = vocab_size × model_dim
-                     = 65,536 × 1,280
-                     = 83,886,080 parameters</code></pre>
-            <p>This is a lookup table where each token (0-65,535) maps to a 1,280-dimensional vector.</p>
+            <p>The embedding layer maps each of the vocab tokens into a dense vector of dimension 1,280. Given a vocabulary of 65,536 tokens, we compute:</p>
+            <pre><code>embedding_params = vocab_size × model_dim  
+                  = 65,536 × 1,280  
+                  = 83,886,080</code></pre>
+            <p>This lookup table is essentially a matrix of size (65,536 × 1,280). One subtlety: many models tie the input-token embedding matrix with the output-projection (LM head) matrix, which would reduce total parameters. In the NanoChat d20 design, the output head is separate, so we account for both layers independently.</p>
+            <p>Why vocab size 65,536? This size (2¹⁶) gives a large enough token-set to handle rich sub-word encoding (e.g., Byte-Pair Encoding or SentencePiece) while keeping embedding lookup cost manageable. A larger vocab increases memory and parameters; smaller vocab may increase sequence length or reduce expressivity.</p>
 
             <h3 style="font-size:18px;">2. Attention Layers: ~131M Parameters</h3>
             <p>Each transformer layer contains self-attention with four projection matrices:</p>
@@ -137,6 +147,10 @@ Output/LM head:       83,886,080
 Total:        ≈ 561,000,000 parameters</code></pre>
             <p><strong>Official count: 560,988,160 parameters</strong> (minor differences due to rounding and bias terms)</p>
 
+            <div style="text-align: center; margin: 20px 0;">
+              <img src="../img/download.png" alt="NanoChat Parameter Distribution" style="max-width: 100%; height: 300px;">
+            </div>
+
             <h2 style="font-size:20px;">Architectural Design Choices</h2>
             <p>These specs weren't arbitrary. Here's the reasoning:</p>
             <p><strong>Number of Layers (20):</strong> More layers enable deeper reasoning and pattern recognition at different abstraction levels.</p>
@@ -145,11 +159,58 @@ Total:        ≈ 561,000,000 parameters</code></pre>
             <pre><code>Head dimension = model_dim / num_heads = 1,280 / 10 = 128 dimensions per head</code></pre>
             <p>128 dimensions per head is the industry standard (used in GPT, BERT, etc.).</p>
 
-            <h2 style="font-size:20px;">From Parameters to Training Data</h2>
-            <p>Once we know the parameter count, the <strong>Chinchilla scaling law</strong> determines how much training data we need:</p>
-            <pre><code>Chinchilla ratio: 20 tokens per parameter (compute-optimal)
+            <h2 style="font-size:20px;">The Chinchilla Scaling Law</h2>
+            <p>DeepMind's Chinchilla paper showed that for compute-optimal performance, the total number of training tokens should be about 20 × the number of parameters.</p>
+            <p>For NanoChat:</p>
+            <pre><code>tokens = 20 × 561M ≈ 11.2 B</code></pre>
+            <p>That's roughly 40–50 GB of cleaned text (depending on compression).</p>
+            <p><strong>Too few tokens</strong> → underfit model (memorises training data).<br>
+            <strong>Too many tokens</strong> → waste of compute (no extra accuracy).</p>
+            <p>This ratio provides a practical rule for balancing training cost and dataset size.</p>
 
-Training tokens = 560,988,160 × 20 = 11,219,763,200 tokens (≈11.2B)</code></pre>
+            <h2 style="font-size:20px;">Memory Footprint</h2>
+            <p>Memory footprint = parameters × bytes per param.</p>
+            <p>Example for FP32, FP16, quantized:</p>
+            <pre><code>Memory Estimate
+
+561M × 4 bytes (FP32) = 2.24 GB
+561M × 2 bytes (FP16) = 1.12 GB
+561M × 1 byte (INT8) = 0.56 GB</code></pre>
+            <p>So NanoChat can easily fit on a single consumer GPU (like an RTX 3090 24 GB) with room for batch processing.</p>
+
+            <h3 style="font-size:18px;">Model Comparison</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Params</th>
+                  <th>Memory (FP16)</th>
+                  <th>Optimal Tokens (B)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>NanoChat d20</td>
+                  <td>0.56 B</td>
+                  <td>1.1 GB</td>
+                  <td>11 B</td>
+                </tr>
+                <tr>
+                  <td>GPT-2 Medium</td>
+                  <td>0.35 B</td>
+                  <td>0.7 GB</td>
+                  <td>7 B</td>
+                </tr>
+                <tr>
+                  <td>Llama-2-7B</td>
+                  <td>7 B</td>
+                  <td>14 GB</td>
+                  <td>140 B</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 style="font-size:20px;">From Parameters to Training Data</h2>
             <p>This determines the dataset size:</p>
             <pre><code>Assuming 4.8 characters per token:
 Total characters = 11.2B tokens × 4.8 = 53.76B characters
