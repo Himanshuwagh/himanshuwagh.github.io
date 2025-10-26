@@ -45,7 +45,7 @@
         <article class="post">
           <header class="post-header">
             <h1 class="post-title" style="font-size:25px;">The Complete Guide to Training Large Language Models: A Three-Stage Pipeline</h1>
-            <p style="font-style: italic; color: #666; margin-top: 10px;">From Raw Text to Production Chat Assistant</p>
+            <p style="font-style: italic; color: #666; margin-top: 10px;">Ever wondered how massive language models like GPT go from piles of raw text to polished conversational AI? This guide breaks down the complete three-stage training pipeline — from data collection and pretraining to fine-tuning and deployment — in a clear, practical way.</p>
             <p style="font-style: italic; color: #666;">A comprehensive, beginner-friendly guide with technical depth</p>
           </header>
 
@@ -61,46 +61,18 @@
               <li><a href="#conclusion">Conclusion</a></li>
             </ol>
 
+            <hr style="margin: 30px 0; opacity: 0.3;">
+
             <h2 id="introduction" style="font-size:20px;">Introduction: Why Three Stages?</h2>
-            <p>When you interact with ChatGPT, Claude, or any modern AI assistant, you're talking to a model that went through multiple training stages. But why can't we just train a model once and be done with it?</p>
+            <p  style="font-style: italic; color: #666; margin-top: 10px;">When you interact with ChatGPT, Claude, or any modern AI assistant, you're talking to a model that went through multiple training stages. But why can't we just train a model once and be done with it?</p>
             
             <p>The answer lies in understanding what we're trying to teach at each stage.</p>
 
-            <h3 style="font-size:18px;">The Three-Stage Philosophy</h3>
-            <pre><code>┌─────────────────────────────────────────────────────┐
-│                    RAW MODEL                        │
-│         (Random weights, knows nothing)             │
-└────────────────────┬────────────────────────────────┘
-                     ↓
-        ┌────────────────────────────┐
-        │   STAGE 1: PRETRAINING     │
-        │   "Learn the language"     │
-        │   Data: Raw internet text  │
-        │   Size: Billions of tokens │
-        └────────────┬───────────────┘
-                     ↓
-            BASE LANGUAGE MODEL
-        "I can predict next words"
-                     ↓
-        ┌────────────────────────────┐
-        │   STAGE 2: MIDTRAINING     │
-        │   "Learn the structure"    │
-        │   Data: Conversations      │
-        │   Size: Millions of tokens │
-        └────────────┬───────────────┘
-                     ↓
-          STRUCTURED MODEL
-    "I understand conversations"
-                     ↓
-        ┌────────────────────────────┐
-        │   STAGE 3: FINE-TUNING     │
-        │   "Learn the behavior"     │
-        │   Data: Perfect examples   │
-        │   Size: Thousands          │
-        └────────────┬───────────────┘
-                     ↓
-            PRODUCTION MODEL
-      "I'm helpful, harmless, honest"</code></pre>
+            
+            <div style="text-align: center; margin: 20px 0;">
+              <img src="../img/pipeline.png" alt="Three-Stage Training Pipeline" style="max-width: 30%; height: auto;">
+              <p style="font-style: italic; color: #666; font-size: 14px; margin-top: 10px;">The complete three-stage training pipeline: from raw model to production-ready AI assistant</p>
+            </div>
 
             <h3 style="font-size:18px;">Real-World Analogy</h3>
             <p>Think of training a doctor:</p>
@@ -110,11 +82,11 @@
               <li><strong>Residency (Fine-tuning)</strong>: Specialize in your field. Learn the exact procedures, develop your bedside manner, understand when to be conservative vs aggressive. Become the specific type of doctor you want to be.</li>
             </ul>
             <p>You can't skip any stage. Without medical school, you don't know medicine. Without rotations, you don't know how to function in a hospital. Without residency, you're not ready to practice independently.</p>
+            <p>Now, let's break down the three stages of training a large language model.</p>
 
+            <hr style="margin: 30px 0; opacity: 0.3;">
             <h2 id="stage1" style="font-size:20px;">Stage 1: Pretraining - Learning Language</h2>
-
-            <h3 style="font-size:18px;">The Goal</h3>
-            <p>Teach a neural network to understand and generate human language by predicting the next word in text sequences.</p>
+            <p  style="font-style: italic; color: #666; margin-top: 10px;">Teach a neural network to understand and generate human language by predicting the next word in text sequences.</p>
 
             <h3 style="font-size:18px;">The Data</h3>
             <p><strong>Source</strong>: Raw text from the internet</p>
@@ -127,7 +99,7 @@
               <li>News articles</li>
             </ul>
 
-            <p><strong>Size</strong>: Typically 100 billion to 2 trillion tokens</p>
+            <p><strong>Size</strong>: Typically 100 billion to 2 trillion tokens. For example:</p>
             <ul>
               <li>GPT-3: ~300 billion tokens</li>
               <li>PaLM: ~780 billion tokens</li>
@@ -287,7 +259,7 @@ Base Model Output:
 "What is 2+2? This is a common math problem. The answer is 4. 
 What is 3+3? The answer is 6. What is 4+4? The answer is 8..."
 [continues forever, doesn't know when to stop]</code></pre>
-
+            <hr style="margin: 30px 0; opacity: 0.3;">
             <h2 id="stage2" style="font-size:20px;">Stage 2: Midtraining - Learning Structure</h2>
 
             <h3 style="font-size:18px;">The Goal</h3>
@@ -492,10 +464,9 @@ User: "Calculate 1234 * 5678"
 Mid Model: &lt;tool_call&gt;calculator(1234 * 5678)&lt;/tool_call&gt;
 [Uses tool correctly!]</code></pre>
 
+            <hr style="margin: 30px 0; opacity: 0.3;">
             <h2 id="stage3" style="font-size:20px;">Stage 3: Fine-tuning - Learning Alignment</h2>
-
-            <h3 style="font-size:18px;">The Goal</h3>
-            <p>Align the model's behavior with human values and preferences. Make it helpful, harmless, and honest.</p>
+            <p  style="font-style: italic; color: #666; margin-top: 10px;">Align the model's behavior with human values and preferences. Make it helpful, harmless, and honest.</p>
 
             <h3 style="font-size:18px;">Why Fine-tuning is Necessary</h3>
             <p>After midtraining, the model understands structure but doesn't know:</p>
